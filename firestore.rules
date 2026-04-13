@@ -1,0 +1,89 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: submissions
+    // Document ID: auto-generated
+    // Fields:
+    //   - name: string (required, 1-50 chars, alphabetical)
+    //   - email: string (required, valid email format)
+    //   - number: string (optional, 7-15 digits)
+    //   - countryCode: string (optional)
+    //   - telegram: string (optional)
+    //   - reason: string (required, enum)
+    //   - contactMe: bool (optional)
+    //   - createdAt: timestamp (required)
+    //
+    // Collection: users
+    // Document ID: auth.uid
+    // Fields:
+    //   - role: string ('admin' or 'user')
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+          (request.auth.token.email == "shashikant132@gmail.com" && request.auth.token.email_verified == true));
+    }
+
+    function isValidEmail(email) {
+      return email is string &&
+        email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidSubmission(data) {
+      let reasons = [
+        "Grief", "Conflict", "Anger Issues", "Identity Crisis", "Work Related Issues", 
+        "Sleeping Disorder", "Loneliness", "Fear", "Health Concerns", "Student Life", 
+        "Anxiety", "Family Issues", "Relationship Issues", "Unknown Sadness", 
+        "Stress", "Self Confidence", "Depression", "Other - Not listed above"
+      ];
+      
+      return data.keys().hasAll(['name', 'email', 'reason', 'createdAt']) &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 50 &&
+             isValidEmail(data.email) &&
+             data.reason in reasons &&
+             data.createdAt is timestamp &&
+             (!('number' in data) || (data.number is string && data.number.size() >= 7 && data.number.size() <= 15)) &&
+             (!('telegram' in data) || data.telegram is string) &&
+             (!('contactMe' in data) || data.contactMe is bool);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /submissions/{submissionId} {
+      // Allow anyone to submit (create)
+      // Note: In a production app, we might want to use anonymous auth or rate limiting
+      allow create: if isValidSubmission(request.resource.data);
+      
+      // Only admins can read submissions
+      allow read: if isAdmin();
+      
+      // No updates or deletes allowed for submissions
+      allow update, delete: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow write: if isAdmin();
+    }
+    
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}

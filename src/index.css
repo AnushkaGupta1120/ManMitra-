@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-manmitra-teal: #43A089;
+  --color-manmitra-yellow: #F9B824;
+  --color-manmitra-teal-light: #E8F4F1;
+  --color-manmitra-yellow-light: #FFF9E6;
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  --color-background: white;
+  --color-foreground: #0f172a;
+  --color-primary: #43A089;
+  --color-primary-foreground: white;
+  --color-secondary: #F9B824;
+  --color-secondary-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #E8F4F1;
+  --color-accent-foreground: #43A089;
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #43A089;
+  --color-popover: white;
+  --color-popover-foreground: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(67, 160, 137, 0.15);
+}
+
+.section-padding {
+  @apply py-20 px-6 md:px-12 lg:px-24;
+}

@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "ContactSubmission": {
+      "title": "Contact Submission",
+      "description": "Data collected from the Get in Touch form",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User's name (max 50 chars, alphabetical)"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address"
+        },
+        "number": {
+          "type": "string",
+          "description": "User's phone number (optional)"
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "Country code for the phone number"
+        },
+        "telegram": {
+          "type": "string",
+          "description": "User's Telegram ID"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason for reaching out"
+        },
+        "contactMe": {
+          "type": "boolean",
+          "description": "Whether the user wants to be contacted"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of submission"
+        }
+      },
+      "required": ["name", "email", "reason", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/submissions/{submissionId}": {
+      "schema": "ContactSubmission",
+      "description": "Collection of contact form submissions"
+    }
+  }
+}
