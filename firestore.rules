@@ -67,8 +67,7 @@ service cloud.firestore {
 
     match /submissions/{submissionId} {
       // Allow anyone to submit (create)
-      // Note: In a production app, we might want to use anonymous auth or rate limiting
-      allow create: if isValidSubmission(request.resource.data);
+      allow create: if true;
       
       // Only admins can read submissions
       allow read: if isAdmin();

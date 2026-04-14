@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Flame, Brain, Users, HeartPulse, UserMinus, Activity } from 'lucide-react';
 
 const stats = [
@@ -51,7 +51,9 @@ export const LonelinessSection = () => {
             The <span className="text-manmitra-yellow">Loneliness</span> Epidemic
           </h2>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Understand the profound impact of loneliness on mental, physical, and emotional well-being across India
+            Loneliness is more than just a feeling; it's a health crisis. As India's premier <strong>active listening platform</strong>, 
+            we provide <strong>non-judgmental emotional support online</strong> to help you navigate these challenges. 
+            Find a <strong>safe space to vent online</strong> and reconnect with your wellness.
           </p>
         </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Heart, Sparkles, ShieldCheck } from 'lucide-react';
 
@@ -37,8 +37,8 @@ export const Hero = ({ onCtaClick, onLearnMoreClick }: { onCtaClick: () => void,
           transition={{ delay: 0.3 }}
           className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          ManMitra is a compassionate mental wellness platform dedicated to providing 
-          a listening ear and professional support to everyone. You don't have to walk alone.
+          ManMitra is India's leading <strong>active listening platform</strong> providing <strong>non-judgmental emotional support online</strong>. 
+          Find a <strong>safe space to vent online</strong> and <strong>talk to a listener</strong> who truly cares. You don't have to walk alone.
         </motion.p>
         
         <motion.div 

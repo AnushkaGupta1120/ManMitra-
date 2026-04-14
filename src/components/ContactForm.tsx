@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -15,7 +15,6 @@ import {
 import { Send, Instagram, Send as TelegramIcon, ExternalLink, BookOpen, AlertCircle, Loader2 } from 'lucide-react';
 import { db, auth } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { signInAnonymously } from 'firebase/auth';
 
 enum OperationType {
   CREATE = 'create',
@@ -98,13 +97,6 @@ export const ContactForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  useEffect(() => {
-    // Sign in anonymously to allow submissions if not already authenticated
-    if (!auth.currentUser) {
-      signInAnonymously(auth).catch(err => console.error("Auth error:", err));
-    }
-  }, []);
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -198,7 +190,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section id="contact-section" className="section-padding bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>

@@ -4,11 +4,11 @@ import { Instagram, Send as TelegramIcon, BookOpen, Heart } from 'lucide-react';
 
 export const Footer = ({ onNavClick }: { onNavClick: (page: string) => void }) => {
   return (
-    <footer className="bg-slate-900 text-white py-16 px-6">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="bg-slate-900 text-white py-10 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
           <div className="col-span-1 md:col-span-2">
-            <Logo className="h-10 mb-6 brightness-0 invert" />
+            <Logo className="h-10 mb-6" />
             <p className="text-slate-400 max-w-md mb-6 leading-relaxed">
               ManMitra is more than just a platform; it's a movement towards 
               better mental health for everyone. We believe that no one should 
@@ -52,6 +52,28 @@ export const Footer = ({ onNavClick }: { onNavClick: (page: string) => void }) =
                   className="hover:text-manmitra-teal transition-colors cursor-pointer"
                 >
                   Contact
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold mb-6">Legal</h4>
+            <ul className="space-y-4 text-slate-400">
+              <li>
+                <button 
+                  onClick={() => onNavClick('privacy')} 
+                  className="hover:text-manmitra-teal transition-colors cursor-pointer"
+                >
+                  Privacy Policy
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => onNavClick('terms')} 
+                  className="hover:text-manmitra-teal transition-colors cursor-pointer"
+                >
+                  Terms & Conditions
                 </button>
               </li>
             </ul>

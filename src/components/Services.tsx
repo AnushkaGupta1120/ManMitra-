@@ -1,48 +1,48 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { MessageCircle, Users, Phone, BookOpen, HeartPulse, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { MessageCircle, Users, Phone, BookOpen, HeartPulse, Brain, Heart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const services = [
   {
-    title: "One-on-One Counseling",
-    desc: "Personalized sessions with certified therapists to help you navigate life's challenges.",
+    title: "Professional Counseling",
+    desc: "Get non-judgmental emotional support from certified experts. Our emotional support online India platform connects you with professionals who understand.",
     icon: Brain,
     color: "bg-manmitra-teal"
   },
   {
-    title: "Active Listening",
-    desc: "Sometimes you just need someone to listen without judgment. We are here for you.",
-    icon: MessageCircle,
+    title: "Elderly Companionship",
+    desc: "Premium companion for old age parents in Noida, Ghaziabad, and Delhi NCR. We provide dedicated elder care companionship to combat isolation.",
+    icon: Heart,
     color: "bg-manmitra-yellow"
   },
   {
-    title: "Support Groups",
-    desc: "Connect with others who understand your journey in a safe, moderated environment.",
+    title: "Peer Support Community",
+    desc: "Join our peer support community online. A safe space to vent online and share feelings without judgment with people who've been there.",
     icon: Users,
     color: "bg-manmitra-teal"
   },
   {
-    title: "Chat, Audio & Video Connectivity",
-    desc: "Connect with your ManMitra through your preferred mode of communication seamlessly.",
+    title: "Chat, Audio Call & Video Call connectivity",
+    desc: "Talk to a stranger about feelings or vent out anonymously India. Our anonymous emotional support chat is available for late night support.",
     icon: Phone,
     color: "bg-manmitra-yellow"
   },
   {
     title: "Wellness Workshops",
-    desc: "Interactive sessions on mindfulness, stress management, and emotional resilience.",
+    desc: "Interactive sessions on mindfulness and resilience. Learn to manage stress on India's premier active listening platform.",
     icon: HeartPulse,
     color: "bg-manmitra-teal"
   },
   {
     title: "In person ManMitra availability",
-    desc: "Face-to-face support for those who prefer physical presence and personal connection.",
+    desc: "Hire a companion for seniors in Ghaziabad or Noida. We offer in-person emotional support for seniors across Delhi NCR.",
     icon: Users,
     color: "bg-manmitra-yellow"
   }
 ];
 
-export const Services = () => {
+export const Services = ({ onLearnMore }: { onLearnMore?: () => void }) => {
   return (
     <section id="services-section" className="section-padding bg-slate-50">
       <div className="container mx-auto">
@@ -63,18 +63,26 @@ export const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <Card className="h-full border-none shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group">
+              <Card className="h-full border-none shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group flex flex-col">
                 <CardHeader className="pb-2">
                   <div className={`w-14 h-14 rounded-2xl ${service.color} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="w-7 h-7" />
                   </div>
                   <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base text-slate-500 leading-relaxed">
+                <CardContent className="flex-1">
+                  <CardDescription className="text-base text-slate-500 leading-relaxed mb-6">
                     {service.desc}
                   </CardDescription>
                 </CardContent>
+                <div className="px-6 pb-8">
+                  <button 
+                    onClick={onLearnMore}
+                    className="text-manmitra-teal font-bold text-sm hover:underline flex items-center gap-2"
+                  >
+                    Learn More Details →
+                  </button>
+                </div>
               </Card>
             </motion.div>
           ))}

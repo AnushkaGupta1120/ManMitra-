@@ -8,16 +8,19 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { LonelinessSection } from './components/LonelinessSection';
 import { Services } from './components/Services';
+import { DetailedServices } from './components/DetailedServices';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
-import { motion, AnimatePresence } from 'motion/react';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
+import { TermsAndConditions } from './components/TermsAndConditions';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
 
   const handleNavClick = (page: string) => {
-    if (page === 'services' && activePage === 'home') {
-      const element = document.getElementById('services-section');
+    if (page === 'contact' && activePage === 'home') {
+      const element = document.getElementById('contact-section');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         return;
@@ -54,7 +57,8 @@ export default function App() {
                 onLearnMoreClick={handleLearnMore}
               />
               <LonelinessSection />
-              <Services />
+              <Services onLearnMore={() => handleNavClick('services')} />
+              <ContactForm />
               <div className="bg-manmitra-teal py-20 px-6 text-center text-white">
                 <div className="container mx-auto max-w-3xl">
                   <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to find your friend in wellness?</h2>
@@ -75,22 +79,12 @@ export default function App() {
           {activePage === 'services' && (
             <motion.div
               key="services"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="pt-32"
             >
-              <Services />
-              <div className="container mx-auto px-6 pb-20 text-center">
-                <h3 className="text-2xl font-bold mb-6">Need a custom support plan?</h3>
-                <button 
-                  onClick={() => handleNavClick('contact')}
-                  className="bg-manmitra-teal text-white px-8 py-3 rounded-full font-bold hover:bg-manmitra-teal/90 transition-colors"
-                >
-                  Talk to an Expert
-                </button>
-              </div>
+              <DetailedServices onContactClick={() => handleNavClick('contact')} />
             </motion.div>
           )}
 
@@ -104,6 +98,30 @@ export default function App() {
               className="pt-32"
             >
               <ContactForm />
+            </motion.div>
+          )}
+
+          {activePage === 'privacy' && (
+            <motion.div
+              key="privacy"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <PrivacyPolicy />
+            </motion.div>
+          )}
+
+          {activePage === 'terms' && (
+            <motion.div
+              key="terms"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <TermsAndConditions />
             </motion.div>
           )}
         </AnimatePresence>
