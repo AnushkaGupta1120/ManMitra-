@@ -78,7 +78,7 @@ export const Services = ({ onLearnMore }: { onLearnMore?: () => void }) => {
                 <div className="px-6 pb-8">
                   <button 
                     onClick={onLearnMore}
-                    className="text-manmitra-teal font-bold text-sm hover:underline flex items-center gap-2"
+                    className="text-manmitra-teal font-bold text-sm hover:underline flex items-center gap-2 hover:translate-x-1 transition-transform cursor-pointer"
                   >
                     Learn More Details →
                   </button>

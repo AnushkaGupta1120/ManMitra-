@@ -202,8 +202,8 @@ export const ContactForm = () => {
             </p>
             
             <div className="space-y-6">
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-manmitra-teal-light border border-manmitra-teal/10">
-                <div className="w-12 h-12 rounded-xl bg-manmitra-teal flex items-center justify-center text-white">
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-manmitra-teal-light border border-manmitra-teal/10 hover:shadow-md transition-shadow group">
+                <div className="w-12 h-12 rounded-xl bg-manmitra-teal flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                   <Instagram className="w-6 h-6" />
                 </div>
                 <div>
@@ -214,8 +214,8 @@ export const ContactForm = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-manmitra-yellow-light border border-manmitra-yellow/10">
-                <div className="w-12 h-12 rounded-xl bg-manmitra-yellow flex items-center justify-center text-white">
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-manmitra-yellow-light border border-manmitra-yellow/10 hover:shadow-md transition-shadow group">
+                <div className="w-12 h-12 rounded-xl bg-manmitra-yellow flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                   <TelegramIcon className="w-6 h-6" />
                 </div>
                 <div>
@@ -226,8 +226,8 @@ export const ContactForm = () => {
                 </div>
               </div>
               
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-white">
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-md transition-shadow group">
+                <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <div>
@@ -353,7 +353,7 @@ export const ContactForm = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full rounded-xl bg-manmitra-teal hover:bg-manmitra-teal/90 text-white py-6 text-lg font-bold shadow-lg shadow-manmitra-teal/20"
+                    className="w-full rounded-xl bg-manmitra-teal hover:bg-manmitra-teal/90 text-white py-6 text-lg font-bold shadow-lg shadow-manmitra-teal/20 hover:scale-[1.02] transition-all active:scale-[0.98]"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-5 h-5 mr-2 animate-spin" />

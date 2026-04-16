@@ -5,22 +5,41 @@ import { Button } from '@/components/ui/button';
 
 const detailedServices = [
   {
-    id: "counseling",
-    title: "Professional Counseling & Therapy",
-    subtitle: "Emotional Support Online India",
-    icon: Brain,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
-    color: "bg-manmitra-teal",
-    price: "Starting from ₹999 per session",
-    duration: "50-55 Mins per session",
-    description: "Our professional counseling services provide a non-judgmental emotional support system for individuals facing life's toughest challenges. Whether you're dealing with anxiety, depression, or work-related stress, our certified experts are here to help you navigate your journey to wellness.",
+    id: "anonymous-chat",
+    title: "Chat, Audio Call & Video Call connectivity",
+    subtitle: "Seamless Emotional Support Connectivity",
+    icon: Phone,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
+    color: "bg-manmitra-yellow",
+    price: "Starting from ₹4 per minute",
+    trial: "( First 10 Mins free )",
+    duration: "Instant connectivity",
+    description: "Need someone to talk to right now? Our platform offers seamless chat, audio, and video connectivity. Whether it's a late night emotional support chat or a quick session to share feelings without judgment online, we are always available.",
     features: [
-      "Certified & Verified Therapists",
-      "Evidence-based therapeutic approaches",
-      "Personalized wellness plans",
-      "Flexible scheduling options"
+      "Instant Audio & Video Calls",
+      "100% Anonymous & Confidential",
+      "Late night emotional support chat",
+      "Talk to a stranger about feelings"
     ],
-    keywords: ["non-judgmental emotional support", "emotional support online India", "professional therapy"]
+    keywords: ["talk to a stranger about feelings", "vent out anonymously India", "anonymous emotional support chat", "need someone to talk to right now"]
+  },
+  {
+    id: "in-person",
+    title: "In person ManMitra availability",
+    subtitle: "Face-to-Face Emotional Support",
+    icon: Users,
+    image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=800",
+    color: "bg-manmitra-yellow",
+    price: "Starting from ₹699 per hour",
+    duration: "Personalized home visits",
+    description: "For those who prefer physical presence, we offer in-person ManMitra availability across Delhi, Noida, and Ghaziabad. Our companions are trained to provide empathetic presence and engage in meaningful conversations and activities.",
+    features: [
+      "Home visits in Noida & Ghaziabad",
+      "Accompaniment for walks or appointments",
+      "Engaging in hobbies and conversation",
+      "Trained and background-verified companions"
+    ],
+    keywords: ["hire a companion for seniors Ghaziabad", "spend time with elderly parents service Noida", "elder care companionship Noida"]
   },
   {
     id: "elderly",
@@ -41,40 +60,22 @@ const detailedServices = [
     keywords: ["companion for old age parents in Noida", "elderly companion services Delhi NCR", "hire a companion for seniors Ghaziabad"]
   },
   {
-    id: "peer-support",
-    title: "Peer Support Community Online",
-    subtitle: "Active Listening Platform India",
-    icon: Users,
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800",
+    id: "counseling",
+    title: "Professional Counseling & Therapy",
+    subtitle: "Emotional Support Online India",
+    icon: Brain,
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800",
     color: "bg-manmitra-teal",
-    price: "Starting from ₹4 per minute",
-    duration: "Pay-as-you-go support",
-    description: "Join a vibrant peer support community online where you can share your feelings without judgment. ManMitra acts as an active listening platform in India, connecting people with shared experiences to foster mutual growth and emotional resilience.",
+    price: "Starting from ₹999 per session",
+    duration: "50-55 Mins per session",
+    description: "Our professional counseling services provide a non-judgmental emotional support system for individuals facing life's toughest challenges. Whether you're dealing with anxiety, depression, or work-related stress, our certified experts are here to help you navigate your journey to wellness.",
     features: [
-      "Moderated support groups",
-      "Safe space to vent online",
-      "Community-led wellness initiatives",
-      "Peer-to-peer connection"
+      "Certified & Verified Therapists",
+      "Evidence-based therapeutic approaches",
+      "Personalized wellness plans",
+      "Flexible scheduling options"
     ],
-    keywords: ["peer support community online", "active listening platform India", "safe space to vent online"]
-  },
-  {
-    id: "anonymous-chat",
-    title: "Chat, Audio Call & Video Call connectivity",
-    subtitle: "Seamless Emotional Support Connectivity",
-    icon: Phone,
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
-    color: "bg-manmitra-yellow",
-    price: "Starting from ₹4 per minute",
-    duration: "Instant connectivity",
-    description: "Need someone to talk to right now? Our platform offers seamless chat, audio, and video connectivity. Whether it's a late night emotional support chat or a quick session to share feelings without judgment online, we are always available.",
-    features: [
-      "Instant Audio & Video Calls",
-      "100% Anonymous & Confidential",
-      "Late night emotional support chat",
-      "Talk to a stranger about feelings"
-    ],
-    keywords: ["talk to a stranger about feelings", "vent out anonymously India", "anonymous emotional support chat", "need someone to talk to right now"]
+    keywords: ["non-judgmental emotional support", "emotional support online India", "professional therapy"]
   },
   {
     id: "workshops",
@@ -95,22 +96,22 @@ const detailedServices = [
     keywords: ["emotional wellness", "stress management", "mindfulness India"]
   },
   {
-    id: "in-person",
-    title: "In person ManMitra availability",
-    subtitle: "Face-to-Face Emotional Support",
+    id: "peer-support",
+    title: "Peer Support Community Online",
+    subtitle: "Active Listening Platform India",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=800",
-    color: "bg-manmitra-yellow",
-    price: "Starting from ₹699 per hour",
-    duration: "Personalized home visits",
-    description: "For those who prefer physical presence, we offer in-person ManMitra availability across Delhi, Noida, and Ghaziabad. Our companions are trained to provide empathetic presence and engage in meaningful conversations and activities.",
+    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800",
+    color: "bg-manmitra-teal",
+    price: "Starting from ₹4 per minute",
+    duration: "Pay-as-you-go support",
+    description: "Join a vibrant peer support community online where you can share your feelings without judgment. ManMitra acts as an active listening platform in India, connecting people with shared experiences to foster mutual growth and emotional resilience.",
     features: [
-      "Home visits in Noida & Ghaziabad",
-      "Accompaniment for walks or appointments",
-      "Engaging in hobbies and conversation",
-      "Trained and background-verified companions"
+      "Moderated support groups",
+      "Safe space to vent online",
+      "Community-led wellness initiatives",
+      "Peer-to-peer connection"
     ],
-    keywords: ["hire a companion for seniors Ghaziabad", "spend time with elderly parents service Noida", "elder care companionship Noida"]
+    keywords: ["peer support community online", "active listening platform India", "safe space to vent online"]
   }
 ];
 
@@ -154,10 +155,15 @@ export const DetailedServices = ({ onContactClick }: { onContactClick: () => voi
                   <h2 className="text-3xl md:text-4xl font-bold mb-2 text-slate-900">{service.title}</h2>
                   <p className="text-manmitra-teal font-semibold mb-4 uppercase tracking-wider text-sm">{service.subtitle}</p>
                   
-                  <div className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-4 mb-6 inline-block">
-                    <p className="text-2xl font-bold text-slate-900 mb-1">{service.price}</p>
-                    <p className="text-sm text-slate-500 font-medium flex items-center gap-2">
-                      <Clock className="w-4 h-4" /> {service.duration}
+                  <div className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl p-3 mb-6 inline-block">
+                    <div className="flex flex-col">
+                      <p className="text-xl font-bold text-slate-900">{service.price}</p>
+                      {service.trial && (
+                        <p className="text-sm font-bold text-manmitra-teal mt-0.5">{service.trial}</p>
+                      )}
+                    </div>
+                    <p className="text-xs text-slate-500 font-medium flex items-center gap-2 mt-1.5">
+                      <Clock className="w-3.5 h-3.5" /> {service.duration}
                     </p>
                   </div>
 
@@ -184,7 +190,7 @@ export const DetailedServices = ({ onContactClick }: { onContactClick: () => voi
 
                   <Button 
                     onClick={onContactClick}
-                    className="rounded-full bg-manmitra-teal hover:bg-manmitra-teal/90 text-white px-8 py-6"
+                    className="rounded-full bg-manmitra-teal hover:bg-manmitra-teal/90 text-white px-8 py-6 hover:scale-105 transition-all active:scale-95 shadow-lg shadow-manmitra-teal/20"
                   >
                     Book a Session
                   </Button>
