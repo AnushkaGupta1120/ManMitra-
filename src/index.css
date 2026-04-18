@@ -30,18 +30,27 @@
   --color-popover-foreground: #0f172a;
 }
 
-@layer base {
-  html {
-    font-size: 18px;
+html {
+  font-size: 17px;
+}
+
+nav, footer {
+  /* Compelling descendant text to maintain 18px-equivalent scale */
+  &, & * {
+    --root-font-size: 18px;
   }
-  
-  body {
-    @apply bg-white text-slate-900 font-sans antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
-  }
+}
+
+nav .text-base, footer .text-base { font-size: 1.0588rem; }
+nav .text-lg, footer .text-lg { font-size: 1.125rem; } /* Wait, text-lg is 1.125rem. 1.125 * 18 = 20.25. 20.25 / 17 = 1.19rem */
+nav .text-sm, footer .text-sm { font-size: 1rem; } /* 0.875 * 18 = 15.75. 15.75 / 17 = 0.926rem */
+
+body {
+  @apply bg-white text-slate-900 font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-semibold tracking-tight;
 }
 
 .glass {

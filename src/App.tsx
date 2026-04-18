@@ -16,6 +16,7 @@ import { TermsAndConditions } from './components/TermsAndConditions';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
+  console.log('App component is mounting');
   const [activePage, setActivePage] = useState('home');
 
   const handleNavClick = (page: string) => {

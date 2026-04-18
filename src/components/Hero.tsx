@@ -39,7 +39,7 @@ export const Hero = ({ onCtaClick, onLearnMoreClick }: { onCtaClick: () => void,
           className="text-5xl md:text-8xl font-bold text-slate-900 mb-8 leading-[1.05]"
         >
           Kyunki har Mann ko <br />
-          <span className="text-manmitra-teal">ek dost chahiye.</span>
+          <span className="text-manmitra-teal">ek dost chahiye</span>
         </motion.h1>
         
         <motion.p 

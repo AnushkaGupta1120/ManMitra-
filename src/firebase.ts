@@ -4,16 +4,16 @@ import { getFirestore, doc, getDocFromServer, Firestore } from 'firebase/firesto
 import firebaseConfig from '../firebase-applet-config.json';
 
 const app = initializeApp(firebaseConfig);
-console.log("Firebase App initialized:", app.name);
+// console.log("Firebase App initialized:", app.name);
 
 export const db: Firestore = firebaseConfig.firestoreDatabaseId 
   ? getFirestore(app, firebaseConfig.firestoreDatabaseId)
   : getFirestore(app);
 
-console.log("Firestore initialized");
+// console.log("Firestore initialized");
 
 export const auth = getAuth(app);
-console.log("Auth initialized");
+// console.log("Auth initialized");
 
 // Validate connection to Firestore
 async function testConnection() {
@@ -26,4 +26,4 @@ async function testConnection() {
   }
 }
 
-testConnection();
+// testConnection();
