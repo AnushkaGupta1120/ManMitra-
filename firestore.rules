@@ -78,7 +78,25 @@ service cloud.firestore {
 
     match /users/{userId} {
       allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      // Allow users to create/update their own profile document
+      allow create, update: if isAuthenticated() && request.auth.uid == userId;
+      // Only admins can delete user documents
+      allow delete: if isAdmin();
+      // Admins can also write any user document
       allow write: if isAdmin();
+
+      match /transactions/{txId} {
+        allow read, write: if isAuthenticated() && request.auth.uid == userId;
+      }
+    }
+    
+    match /sessions/{sessionId} {
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      match /messages/{messageId} {
+        allow read, write: if isAuthenticated();
+      }
     }
     
     match /{path=**} {

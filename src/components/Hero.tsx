@@ -5,7 +5,7 @@ import { Heart, Sparkles, ShieldCheck } from 'lucide-react';
 
 export const Hero = ({ onCtaClick, onLearnMoreClick }: { onCtaClick: () => void, onLearnMoreClick: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
       {/* Hero Banner Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
