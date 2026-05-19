@@ -23,14 +23,27 @@ import { Wallet } from './pages/Wallet';
 import { Chatbot } from './components/Chatbot';
 import { SessionChat } from './pages/SessionChat';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '@/hooks/useAuth';
 
 // Pages that should hide the standard Navbar & Footer
 const AUTH_PAGES = ['login', 'signup'];
 
 export default function App() {
   console.log('App component is mounting');
+  const { user } = useAuth();
   const [activePage, setActivePage] = useState('home');
   const [activeSession, setActiveSession] = useState<{ listener: Listener; mode: CommMode } | null>(null);
+
+  // Auto redirect logged-in users away from Auth pages (Login/Signup)
+  useEffect(() => {
+    if (user && AUTH_PAGES.includes(activePage)) {
+      if (user.email === 'shashikant132@gmail.com') {
+        setActivePage('listener-dashboard');
+      } else {
+        setActivePage('dashboard');
+      }
+    }
+  }, [user, activePage]);
 
   const handleNavClick = (page: string) => {
     if (page === 'contact' && activePage === 'home') {
